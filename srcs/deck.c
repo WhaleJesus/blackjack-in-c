@@ -6,7 +6,7 @@
 /*   By: sklaps <sklaps@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 08:11:45 by sklaps            #+#    #+#             */
-/*   Updated: 2024/05/12 22:35:30 by sklaps           ###   ########.fr       */
+/*   Updated: 2024/05/13 19:25:25 by sklaps           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	deal_card(t_player *players, t_deck *deck, int turn, int first_round)
 		printf("Bust a nut!\n");
 	}
 	else if (players->score == 21)
-		players->stand == 1;
+		players->stand = 1;
 	readline("press any key to continue...");
 }
 
@@ -130,4 +130,5 @@ int	init_deck(t_deck **deck)
 		ft_deckadd_back(deck, card);
 		i++;
 	}
+	return (0);
 }

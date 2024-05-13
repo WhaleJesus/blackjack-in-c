@@ -63,7 +63,6 @@ void	set_winner(t_player *players, int hi_score)
 void	check_winner(t_player **players)
 {
 	int	hi_score;
-	char	*winner;
 
 	hi_score = check_eor(*players);
 	printheader();
@@ -87,7 +86,6 @@ void	start_game(t_player **players, t_deck **deck, int num_players)
 	int		turn;
 	int 	players_active;
 	int		eor;
-	char	*input;
 
 	players_active = num_players;
 	init_deck(deck);
@@ -121,13 +119,11 @@ void	ft_blackjack(void)
 	t_player 	*players;
 	t_deck		*deck;
 	int 		num_players;
-	int 		i;
 	char		*input;
 
 	players = NULL;
 	deck = NULL;
 	input = "";
-	i = 0;
 
 	srand(time(0));
 	num_players = select_players(&players);

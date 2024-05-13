@@ -6,7 +6,7 @@
 /*   By: sklaps <sklaps@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:07:29 by sklaps            #+#    #+#             */
-/*   Updated: 2024/05/12 19:15:53 by sklaps           ###   ########.fr       */
+/*   Updated: 2024/05/13 19:26:07 by sklaps           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int	select_players(t_player **players)
 	int			dup_name = 1;
 	char		*name;
 	t_player	*curr_player;
-	t_player	*tmp;
 
 	printheader();
 	while (num_players < 1)
