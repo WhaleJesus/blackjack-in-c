@@ -10,7 +10,8 @@ SRCS = \
 	   srcs/libft/ft_atoi.c \
 	   srcs/libft/ft_isdigit.c \
 	   srcs/libft/ft_itoa.c \
-	   srcs/libft/ft_strlen.c
+	   srcs/libft/ft_strlen.c \
+	   srcs/libft/ft_strdup.c
 
 OBJECTS = $(SRCS:.c=.o)
 

@@ -40,6 +40,7 @@ void	reset_players(t_player *players);
 
 int			init_deck(t_deck **deck);
 void	deal_card(t_player *players, t_deck *deck, int turn, int first_round);
+void	ft_deckclear(t_deck **deck);
 
 void	start_game(t_player **players, t_deck **deck, int num_players);
 #endif
