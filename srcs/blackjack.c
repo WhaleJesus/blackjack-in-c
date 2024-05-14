@@ -88,7 +88,6 @@ void	start_game(t_player **players, t_deck **deck, int num_players)
 	int		eor;
 
 	players_active = num_players;
-	init_deck(deck);
 	while (players_active > 1)
 	{
 		eor = 0;
@@ -125,9 +124,9 @@ void	ft_blackjack(void)
 	deck = NULL;
 	input = "";
 
-	srand(time(0));
+	init_deck(&deck);
 	num_players = select_players(&players);
-	if (num_players < 0)
+	if (num_players < 1)
 		return ;
 	while (ft_strncmp(input, "q", 5))
 	{
@@ -137,6 +136,7 @@ void	ft_blackjack(void)
 		if (!ft_strncmp(input, "1", 5))
 			start_game(&players, &deck, num_players);
 	}
+	ft_deckclear(&deck);
 }
 
 int	main(void)

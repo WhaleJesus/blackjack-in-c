@@ -6,7 +6,7 @@
 /*   By: sklaps <sklaps@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 08:11:45 by sklaps            #+#    #+#             */
-/*   Updated: 2024/05/13 19:25:25 by sklaps           ###   ########.fr       */
+/*   Updated: 2024/05/14 22:20:43 by sklaps           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,21 @@ void	ft_deckadd_back(t_deck **lst, t_deck *new)
 		*lst = new;
 	else
 		tmp->next = new;
+}
+
+void	ft_deckclear(t_deck **deck)
+{
+	t_deck	*tmp;
+
+	if (!deck)
+		return ;
+	while (*deck)
+	{
+		tmp = (*deck)->next;
+		free((*deck)->card);
+		free(*deck);
+		*deck = tmp;
+	}
 }
 
 int		calc_score(char	*card)
@@ -107,6 +122,7 @@ int	init_deck(t_deck **deck)
 		if (!card)
 			return (-1);
 		card->card = ft_itoa(k);
+		card->status = 1;
 		card->next = NULL;
 		ft_deckadd_back(deck, card);
 		if (k == 10)
@@ -119,13 +135,14 @@ int	init_deck(t_deck **deck)
 		if (!card)
 			return (-1);
 		if (i < 4)
-			card->card = "J";
+			card->card = ft_strdup("J");
 		else if (i < 8)
-			card->card = "Q";
+			card->card = ft_strdup("Q");
 		else if (i < 12)
-			card->card = "K";
+			card->card = ft_strdup("K");
 		else
-			card->card = "A";
+			card->card = ft_strdup("A");
+		card->status = 1;
 		card->next = NULL;
 		ft_deckadd_back(deck, card);
 		i++;

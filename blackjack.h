@@ -12,6 +12,7 @@
 typedef struct s_deck
 {
 	char			*card;
+	int				status;
 	struct s_deck	*next;
 }	t_deck;
 
